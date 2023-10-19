@@ -1,0 +1,31 @@
+<footer class="footer">
+	<p class="footer__description">
+		<span class="description__data"
+			>Typemaster <time class="data__year" datetime="2021">2021</time></span
+		>
+		 | <span class="description__reversed">All Rights Reserved</span>
+	</p>
+</footer>
+
+<style>
+	.footer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 3em; /* 48px */
+	}
+	.footer__description {
+		display: flex;
+		gap: 0.5em;
+		font-size: 1rem; /* 16px*/
+		color: var(--second-color);
+	}
+
+	/* 768px */
+	@media screen and (width >= 48em) {
+		.footer {
+			margin-bottom: 2.5em;
+		}
+	}
+</style>
