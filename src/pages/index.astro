@@ -45,7 +45,7 @@ const dataCard = [
 		<ul class="keyboard__list">
 			{
 				dataCard.map((item) => (
-					<li>
+					<li class="list__item">
 						<Card
 							image={item.image}
 							alt={item.alt}
@@ -61,14 +61,19 @@ const dataCard = [
 
 <style>
 	.main__section--keyboard {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, max-content);
+		grid-template-areas:
+			"title title title"
+			"desc desc desc"
+			"list list list";
 		gap: 1.5em; /* 24px */
 		width: 91%;
 	}
 
 	.keyboard__title {
+		grid-area: title;
 		text-align: center;
 		font-size: 2rem; /* 32px */
 		line-height: 1.13;
@@ -76,6 +81,7 @@ const dataCard = [
 	}
 
 	.keyboard__description {
+		grid-area: desc;
 		text-align: center;
 		font-size: 1rem; /* 16px */
 		line-height: 1.62;
@@ -83,10 +89,58 @@ const dataCard = [
 	}
 
 	.keyboard__list {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 4em;
+		grid-area: list;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		grid-template-areas:
+			"highly highly highly highly"
+			"bluetooth bluetooth bluetooth bluetooth"
+			"battery battery battery battery"
+			"light light light light";
+		gap: 4em; /* 64px */
 		margin-top: 6.8em; /* 108.8px */
+	}
+
+	.list__item:nth-of-type(1) {
+		grid-area: highly;
+	}
+
+	.list__item:nth-of-type(2) {
+		grid-area: bluetooth;
+	}
+
+	.list__item:nth-of-type(3) {
+		grid-area: battery;
+	}
+
+	.list__item:nth-of-type(4) {
+		grid-area: light;
+	}
+
+	@media screen and (width >= 48em) {
+		.main__section--keyboard {
+			grid-template-areas:
+				"title  desc desc"
+				"title desc desc"
+				"list list list";
+			align-items: center;
+		}
+
+		.keyboard__title {
+			text-align: start;
+		}
+
+		.keyboard__description {
+			text-align: start;
+		}
+
+		.keyboard__list {
+			grid-template-areas:
+				"highly highly bluetooth bluetooth"
+				"highly highly bluetooth bluetooth"
+				"battery battery light light"
+				"battery battery light light";
+		}
 	}
 </style>

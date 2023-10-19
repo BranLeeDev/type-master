@@ -47,4 +47,14 @@ const { image, alt, title, description } = Astro.props;
 		line-height: 1.62;
 		color: var(--second-color);
 	}
+
+	@media screen and (width >= 48em) {
+		.article {
+			align-items: flex-start;
+		}
+		.article__title,
+		.article__description {
+			text-align: start;
+		}
+	}
 </style>
