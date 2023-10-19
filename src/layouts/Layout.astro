@@ -1,4 +1,6 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 interface Props {
 	title: string;
 }
@@ -11,41 +13,61 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link
+			rel="icon"
+			type="image/ico"
+			href="https://res.cloudinary.com/dbbixakcl/image/upload/f_auto,q_auto/v1/FrontendMentor/Pod/s27vstgwj4exbbbnenpw"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700;900&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<slot />
+		<div class="content-layout">
+			<Header />
+			<slot />
+			<Footer />
+		</div>
 	</body>
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--second-color: #7b8bad;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+	/* Reset Styles */
+	* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	body {
+		font-family: "Barlow", sans-serif;
+		font-weight: 500;
+	}
+
+	.content-layout {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-width: 20em; /* 320px */
+		width: 100%;
+		height: 100vh;
+		min-height: 20em; /* 320px */
 	}
 </style>
