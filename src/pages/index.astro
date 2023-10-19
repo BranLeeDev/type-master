@@ -1,5 +1,92 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const dataCard = [
+	{
+		image: "/public/images/svg/icon-compatible.svg",
+		alt: "White television icon",
+		title: "HIGHLY COMPATIBLE",
+		description:
+			"Easy to use and works well with all major computer brands, gaming consoles and mobile devices. Plug & play, no installation or driver needed.",
+	},
+	{
+		image: "/public/images/svg/icon-bluetooth.svg",
+		alt: "White bluetooth icon",
+		title: "WIRELESS WITH BLUETOOTH",
+		description:
+			"Powerful 2.4G RF technology allows you to connect the cordless keyboard from up to 30ft away. Simply plug the unifying receiver into your computer.",
+	},
+	{
+		image: "/public/images/svg/icon-battery.svg",
+		alt: "White battery icon",
+		title: "HIGH CAPACITY BATTERY",
+		description:
+			"Equipped with a long-lasting built-in battery, you’ll never have to spend a dime on replaceable ones. Enjoy 40 hours of usage time between charges.",
+	},
+	{
+		image: "/public/images/svg/icon-light.svg",
+		alt: "White light icon",
+		title: "RGB BACKLIT MODES",
+		description:
+			"Choose from 4 backlight brightness levels and adjustable breathing speed. Each key glows intensely in the dark and helps you type in low light conditions.",
+	},
+];
 ---
 
-<Layout title="Type Master" />
+<Layout title="Type Master">
+	<section class="main__section main__section--keyboard">
+		<h2 class="keyboard__title">mechanical wireless Keyboard</h2>
+		<p class="keyboard__description">
+			The Typemaster keyboard boasts top-notch build and practical design. It
+			offers a wide variety of switches and keycaps, along with reliable
+			wireless connectivity.
+		</p>
+		<ul class="keyboard__list">
+			{
+				dataCard.map((item) => (
+					<li>
+						<Card
+							image={item.image}
+							alt={item.alt}
+							title={item.title}
+							description={item.description}
+						/>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</Layout>
+
+<style>
+	.main__section--keyboard {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5em; /* 24px */
+		width: 91%;
+	}
+
+	.keyboard__title {
+		text-align: center;
+		font-size: 2rem; /* 32px */
+		line-height: 1.13;
+		font-weight: 900;
+	}
+
+	.keyboard__description {
+		text-align: center;
+		font-size: 1rem; /* 16px */
+		line-height: 1.62;
+		color: var(--second-color);
+	}
+
+	.keyboard__list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 4em;
+		margin-top: 6.8em; /* 108.8px */
+	}
+</style>

@@ -1,0 +1,50 @@
+---
+interface Props {
+	image: string;
+	alt: string;
+	title: string;
+	description: string;
+}
+
+const { image, alt, title, description } = Astro.props;
+---
+
+<article class="article">
+	<div class="article__background-image">
+		<img class="article__image" src={image} alt={alt} loading="lazy" />
+	</div>
+	<h3 class="article__title">{title}</h3>
+	<p class="article__description">{description}</p>
+</article>
+
+<style>
+	.article {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5em; /* 24px */
+	}
+
+	.article__background-image {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: 4em; /* 64px */
+		height: 4em; /*  64px */
+		border-radius: 1em; /* 16px */
+		background-color: #f16718;
+	}
+
+	.article__title {
+		margin-top: 1.5em; /* 24px */
+		text-align: center;
+		font-size: 1.5rem; /* 24px */
+		line-height: 1.17;
+	}
+
+	.article__description {
+		text-align: center;
+		line-height: 1.62;
+		color: var(--second-color);
+	}
+</style>
