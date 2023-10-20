@@ -53,6 +53,7 @@ const { image, alt, title, description } = Astro.props;
 		.article {
 			align-items: flex-start;
 		}
+
 		.article__title,
 		.article__description {
 			text-align: start;
@@ -61,7 +62,7 @@ const { image, alt, title, description } = Astro.props;
 
 	@media screen and (width >= 90em) {
 		.article__title {
-			max-width: 9em;
+			max-width: 9em; /* 144px */
 		}
 	}
 </style>
