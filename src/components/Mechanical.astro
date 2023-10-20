@@ -1,0 +1,282 @@
+---
+import Card from "../components/Card.astro";
+
+const dataCard = [
+	{
+		image: "/images/svg/icon-compatible.svg",
+		alt: "White television icon",
+		title: "Highly Compatible",
+		description:
+			"Easy to use and works well with all major computer brands, gaming consoles and mobile devices. Plug & play, no installation or driver needed.",
+	},
+	{
+		image: "/images/svg/icon-bluetooth.svg",
+		alt: "White bluetooth icon",
+		title: "Wireless With Bluetooth",
+		description:
+			"Powerful 2.4G RF technology allows you to connect the cordless keyboard from up to 30ft away. Simply plug the unifying receiver into your computer.",
+	},
+	{
+		image: "/images/svg/icon-battery.svg",
+		alt: "White battery icon",
+		title: "High Capacity Battery",
+		description:
+			"Equipped with a long-lasting built-in battery, you’ll never have to spend a dime on replaceable ones. Enjoy 40 hours of usage time between charges.",
+	},
+	{
+		image: "/images/svg/icon-light.svg",
+		alt: "White light icon",
+		title: "RGB Backlit Modes",
+		description:
+			"Choose from 4 backlight brightness levels and adjustable breathing speed. Each key glows intensely in the dark and helps you type in low light conditions.",
+	},
+];
+---
+
+<section class="main__section main__section--mechanical">
+	<div class="mechanical__gallery">
+		<picture class="gallery__picture gallery__picture--background">
+			<source
+				class="picture__source"
+				srcset="/images/jpg/desktop/image-phone-and-keyboard.jpg"
+				media="(width >= 90em)"
+			/>
+			<source
+				class="picture__source"
+				srcset="/images/jpg/tablet/image-phone-and-keyboard.jpg"
+				media="(width >= 48em)"
+			/>
+			<img
+				class="gallery__image"
+				src="/images/jpg/mobile/image-phone-and-keyboard.jpg"
+				alt="Black keyboard with a black phone on the side"
+			/>
+		</picture>
+		<picture class="gallery__picture">
+			<source
+				class="picture__source"
+				srcset="/images/jpg/desktop/image-glass-and-keyboard.jpg"
+				media="(width >= 90em)"
+			/>
+			<source
+				class="picture__source"
+				srcset="/images/jpg/tablet/image-glass-and-keyboard.jpg"
+				media="(width >= 48em)"
+			/>
+			<img
+				class="gallery__image"
+				src="/images/jpg/mobile/image-glass-and-keyboard.jpg"
+				alt="Black keyboard with a glass on the side"
+			/>
+		</picture>
+	</div>
+	<div class="mechanical__data-container">
+		<h2 class="mechanical__title">Mechanical Wireless Keyboard</h2>
+		<p class="mechanical__description">
+			The Typemaster keyboard boasts top-notch build and practical design. It
+			offers a wide variety of switches and keycaps, along with reliable
+			wireless connectivity.
+		</p>
+	</div>
+	<ul class="mechanical__list">
+		{
+			dataCard.map((item) => (
+				<li class="list__item">
+					<Card
+						image={item.image}
+						alt={item.alt}
+						title={item.title}
+						description={item.description}
+					/>
+				</li>
+			))
+		}
+	</ul>
+</section>
+
+<style>
+	.main__section--mechanical {
+		display: flex;
+		flex-direction: column;
+		gap: 5em; /* 80px */
+		width: 91%;
+	}
+
+	.mechanical__gallery {
+		display: flex;
+		gap: 1.5em; /* 24px */
+	}
+
+	.mechanical__data-container {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5em; /* 24px */
+	}
+
+	.gallery__picture:nth-of-type(1) {
+		position: relative;
+		left: -10%;
+	}
+
+	.gallery__picture:nth-of-type(2) {
+		position: relative;
+		left: -6%;
+	}
+
+	.gallery__picture--background {
+		position: relative;
+	}
+
+	.gallery__picture--background::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 10%;
+		width: 100%;
+		height: 100%;
+		border-radius: 0.5em; /* 8px */
+		background-color: #f26818b3;
+	}
+
+	.gallery__image {
+		max-width: 110%;
+		height: 100%;
+		max-height: 100%;
+		border-radius: 0.5em;
+	}
+
+	.mechanical__title {
+		grid-area: title;
+		text-align: center;
+		font-size: 2rem; /* 32px */
+		line-height: 1.13;
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+
+	.mechanical__description {
+		grid-area: desc;
+		text-align: center;
+		font-size: 1rem; /* 16px */
+		line-height: 1.62;
+		color: var(--second-color);
+	}
+
+	.mechanical__list {
+		grid-area: list;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		grid-template-areas:
+			"highly highly highly highly"
+			"bluetooth bluetooth bluetooth bluetooth"
+			"battery battery battery battery"
+			"light light light light";
+		gap: 4em; /* 64px */
+		margin-top: 1.5em; /* 24px */
+	}
+
+	.list__item:nth-of-type(1) {
+		grid-area: highly;
+	}
+
+	.list__item:nth-of-type(2) {
+		grid-area: bluetooth;
+	}
+
+	.list__item:nth-of-type(3) {
+		grid-area: battery;
+	}
+
+	.list__item:nth-of-type(4) {
+		grid-area: light;
+	}
+
+	@media screen and (width >= 48em) {
+		.mechanical__data-container {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 8em; /* 128px */
+		}
+
+		.mechanical__title {
+			text-align: start;
+		}
+
+		.mechanical__description {
+			text-align: start;
+		}
+
+		.gallery__picture:nth-of-type(1) {
+			left: 0;
+		}
+
+		.gallery__picture:nth-of-type(2) {
+			left: 0;
+		}
+
+		.gallery__picture--background::after {
+			left: 0;
+		}
+
+		.gallery__image {
+			max-width: 100%;
+		}
+
+		.mechanical__list {
+			grid-template-areas:
+				"highly highly bluetooth bluetooth"
+				"highly highly bluetooth bluetooth"
+				"battery battery light light"
+				"battery battery light light";
+		}
+	}
+
+	/* 1440px */
+	@media screen and (width >= 90em) {
+		.main__section--mechanical {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: repeat(2, max-content);
+			align-items: center;
+			grid-template-areas:
+				"gallery gallery gallery data data"
+				"list list list list list";
+			max-width: 82em; /* 1312px */
+			gap: 8em; /* 128px */
+		}
+
+		.mechanical__gallery {
+			grid-area: gallery;
+			position: relative;
+		}
+
+		.mechanical__gallery::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: -17.5em; /* 280px */
+			width: 16em; /* 256px */
+			height: 15em; /* 240px */
+			border-radius: 1em; /* 16px */
+			background-color: #e8eff2;
+		}
+
+		.mechanical__data-container {
+			grid-area: data;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1.5em; /* 24px */
+		}
+
+		.mechanical__list {
+			grid-area: list;
+			grid-template-areas:
+				"highly bluetooth battery light"
+				"highly bluetooth battery light"
+				"highly bluetooth battery light"
+				"highly bluetooth battery light";
+		}
+	}
+</style>
