@@ -40,6 +40,7 @@ const { image, alt, title, description } = Astro.props;
 		text-align: center;
 		font-size: 1.5rem; /* 24px */
 		line-height: 1.17;
+		text-transform: uppercase;
 	}
 
 	.article__description {
@@ -55,6 +56,12 @@ const { image, alt, title, description } = Astro.props;
 		.article__title,
 		.article__description {
 			text-align: start;
+		}
+	}
+
+	@media screen and (width >= 90em) {
+		.article__title {
+			max-width: 9em;
 		}
 	}
 </style>
