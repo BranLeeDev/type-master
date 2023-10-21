@@ -11,7 +11,7 @@ const { image, alt, title, description } = Astro.props;
 
 <article class="article">
 	<div class="article__background-image">
-		<img class="article__image" src={image} alt={alt} loading="lazy" />
+		<img class="article__image" src={image} alt={alt} />
 	</div>
 	<h3 class="article__title">{title}</h3>
 	<p class="article__description">{description}</p>
