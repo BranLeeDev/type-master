@@ -1,54 +1,37 @@
-# Astro Starter Kit: Basics
+# Proyecto TYPE MASTER (Frontend Mentor)
 
-```sh
-npm create astro@latest -- --template basics
-```
+Proyecto de Frontend Mentor, ha sido construido empleando HTML semántico, CSS y Astro.
+Se uso el enfoque de diseño Mobile First, brindando una buena experiencia de usuario para dispositivos móviles.
+También es accesible para personas con discapacidad.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Características Destacadas
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Diseño Responsivo**: El sitio web se adapta de manera perfecta tanto en dispositivos móviles como en pantallas más grandes.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **Semántica y Accesibilidad**: He utilizado HTML semántico. Además he implementado las mejores prácticas de accesibilidad web.
 
-## 🚀 Project Structure
+- **Enfoque Mobile First**: He adoptado por usar el enfoque "Mobile First". Esto asegura que la experiencia en dispositivos móviles sea óptima.
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Astro**: He utilizado el framework Astro, logrando un sitio web de alto rendimiento.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **BEM**: He utilizado la metodología BEM, para facilitar la creación y mantenimiento de estilos en el proyecto.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Animaciones**: He implementando animaciones para el inicio de la pagina web. Además cuenta con animaciones al hacer scroll, solo esta disponible para las ultimas versiones de tu navegador y en pantallas menores a 830px.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Enlace del proyecto desplegado
 
-Any static assets, like images, can be placed in the `public/` directory.
+[TYPE MASTER](https://type-master-dwe.pages.dev/)
 
-## 🧞 Commands
+## Vista Previa
 
-All commands are run from the root of the project, from a terminal:
+![Vista Previa](https://res.cloudinary.com/dbbixakcl/image/upload/f_auto,q_auto/v1/FrontendMentor/nwuckk1ghvwixobqmueo)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Autor
 
-## 👀 Want to learn more?
+[GitHub](https://github.com/BranLeeDev)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[LinkedIn](https://www.linkedin.com/in/brandonaguero/)
+
+[Twitter](https://twitter.com/branleedev)
+
+[FrontendMentor](https://www.frontendmentor.io/profile/BranLeeDev)
