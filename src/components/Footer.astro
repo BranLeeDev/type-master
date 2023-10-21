@@ -23,6 +23,29 @@
 		color: var(--text-color);
 	}
 
+	/* 829px */
+	@media screen and (height <= 51.8125em) {
+		.footer {
+			view-timeline-name: --scroll;
+			view-timeline-axis: block;
+			animation-timeline: --scroll;
+			animation-name: show;
+			animation-range: entry 1% cover 5%;
+			animation-fill-mode: both;
+		}
+
+		@keyframes show {
+			from {
+				opacity: 0;
+				scale: 25%;
+			}
+			to {
+				opacity: 1;
+				scale: 100%;
+			}
+		}
+	}
+
 	/* 768px */
 	@media screen and (width >= 48em) {
 		.footer {

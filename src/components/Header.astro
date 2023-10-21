@@ -18,6 +18,18 @@
 		display: flex;
 		flex-direction: column;
 		width: 91%;
+		animation: left-side 1s ease-in-out forwards;
+	}
+
+	@keyframes left-side {
+		from {
+			opacity: 0;
+			transform: translateX(100%);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
 	}
 
 	.header__list {

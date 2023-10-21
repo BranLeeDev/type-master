@@ -40,6 +40,18 @@
 		flex-direction: column;
 		width: 91%;
 		gap: 2em;
+		animation: right-side 1.1s ease-in-out forwards;
+	}
+
+	@keyframes right-side {
+		from {
+			opacity: 0;
+			transform: translateX(-100%);
+		}
+		to {
+			opacity: 1;
+			transform: translate(0);
+		}
 	}
 
 	.typemaster__container-info {
