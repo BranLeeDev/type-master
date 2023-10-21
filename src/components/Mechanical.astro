@@ -1,5 +1,5 @@
 ---
-import Card from "../components/Card.astro";
+import Card from "./Card.astro";
 
 const dataCard = [
 	{
@@ -71,8 +71,8 @@ const dataCard = [
 		</picture>
 	</div>
 	<div class="mechanical__data-container">
-		<h2 class="mechanical__title">Mechanical Wireless Keyboard</h2>
-		<p class="mechanical__description">
+		<h2 class="section__title">Mechanical Wireless Keyboard</h2>
+		<p class="section__description">
 			The Typemaster keyboard boasts top-notch build and practical design. It
 			offers a wide variety of switches and keycaps, along with reliable
 			wireless connectivity.
@@ -116,15 +116,18 @@ const dataCard = [
 	.gallery__picture:nth-of-type(1) {
 		position: relative;
 		left: -10%;
+		width: 30%;
 	}
 
 	.gallery__picture:nth-of-type(2) {
 		position: relative;
 		left: -6%;
+		width: 70%;
 	}
 
 	.gallery__picture--background {
 		position: relative;
+		border-radius: 1em;
 	}
 
 	.gallery__picture--background::after {
@@ -134,7 +137,7 @@ const dataCard = [
 		left: 10%;
 		width: 100%;
 		height: 100%;
-		border-radius: 0.5em; /* 8px */
+		border-radius: 1em; /* 16px */
 		background-color: #f26818b3;
 	}
 
@@ -142,24 +145,18 @@ const dataCard = [
 		max-width: 110%;
 		height: 100%;
 		max-height: 100%;
-		border-radius: 0.5em;
+		border-radius: 1em;
 	}
 
-	.mechanical__title {
+	.section__title {
 		grid-area: title;
 		text-align: center;
-		font-size: 2rem; /* 32px */
-		line-height: 1.13;
-		font-weight: 900;
-		text-transform: uppercase;
+		font-size: 2em; /* 32px */
 	}
 
-	.mechanical__description {
+	.section__description {
 		grid-area: desc;
 		text-align: center;
-		font-size: 1rem; /* 16px */
-		line-height: 1.62;
-		color: var(--second-color);
 	}
 
 	.mechanical__list {
@@ -192,6 +189,7 @@ const dataCard = [
 		grid-area: light;
 	}
 
+	/* 768px*/
 	@media screen and (width >= 48em) {
 		.mechanical__data-container {
 			display: flex;
@@ -200,11 +198,11 @@ const dataCard = [
 			gap: 8em; /* 128px */
 		}
 
-		.mechanical__title {
+		.section__title {
 			text-align: start;
 		}
 
-		.mechanical__description {
+		.section__description {
 			text-align: start;
 		}
 
@@ -220,11 +218,18 @@ const dataCard = [
 			left: 0;
 		}
 
-		.gallery__image {
-			max-width: 100%;
+		.mechanical__gallery {
+			justify-content: space-between;
 		}
 
-		.mechanical__list {
+		.gallery__image {
+			width: 100%;
+			max-width: 100%;
+			max-height: 480px;
+			object-fit: cover;
+		}
+
+		.gallery__image .mechanical__list {
 			grid-template-areas:
 				"highly highly bluetooth bluetooth"
 				"highly highly bluetooth bluetooth"

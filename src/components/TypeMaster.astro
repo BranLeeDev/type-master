@@ -1,13 +1,20 @@
-<section class="main__section--typemaster">
-	<h2 class="typemaster__title">Typemaster Keyboard</h2>
-	<p class="typemaster__description">
-		Improve your productivity and gaming without breaking the bank. Upgrade to a
-		high quality mechanical typing experience.
-	</p>
-	<div class="typemaster__container-data">
-		<a href="/">PRE-ORDER NOW</a>
-		<p>Release on <time datetime="2027-05">5/27</time></p>
+<section class="main__section--typemaster main__section">
+	<div class="typemaster__container-info">
+		<div class="typemaster__container-data">
+			<h2 class="section__title">Typemaster Keyboard</h2>
+			<p class="section__description">
+				Improve your productivity and gaming without breaking the bank. Upgrade
+				to a high quality mechanical typing experience.
+			</p>
+		</div>
+		<div class="typemaster__container-date">
+			<a class="typemaster__button-link" href="/">PRE-ORDER NOW</a>
+			<p class="typemaster__release">
+				Release on <time class="release__date" datetime="2027-05">5/27</time>
+			</p>
+		</div>
 	</div>
+
 	<picture class="typemaster__picture">
 		<source
 			class="picture__source"
@@ -26,3 +33,125 @@
 		/>
 	</picture>
 </section>
+
+<style>
+	.main__section--typemaster {
+		display: flex;
+		flex-direction: column;
+		width: 91%;
+		gap: 2em;
+	}
+
+	.typemaster__container-info {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+	}
+
+	.typemaster__container-data {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+	}
+
+	.section__title {
+		font-size: 3em; /* 48px */
+	}
+
+	.typemaster__container-date {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.typemaster__button-link {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		min-width: 9em; /* 144px */
+		width: 38%;
+		height: 3em; /* 48px */
+		max-width: 11em; /* 176px */
+		background-color: #f16718;
+		border-radius: 0.5em; /* 8px */
+		font-weight: 700;
+		color: #ffffff;
+	}
+
+	.typemaster__release {
+		font-weight: 700;
+		text-transform: uppercase;
+		color: var(--text-color);
+	}
+
+	.typemaster__picture {
+		margin-top: 2em;
+	}
+
+	.typemaster__image {
+		position: relative;
+		right: -2em;
+		width: 100%;
+		max-width: 120%;
+		max-height: 21em; /* 336px */
+		border-radius: 1em;
+		object-fit: cover;
+	}
+
+	/* 768px */
+	@media screen and (width >= 48em) {
+		.main__section--typemaster {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-areas: "info image";
+			align-items: center;
+		}
+
+		.typemaster__container-info {
+			grid-area: info;
+		}
+
+		.typemaster__container-date {
+			justify-content: flex-start;
+			gap: 3em; /* 48px */
+		}
+
+		.typemaster__picture {
+			grid-area: image;
+		}
+
+		.typemaster__image {
+			right: -1em; /* 16px */
+			width: 142%;
+			height: 100%;
+			max-height: 27em; /* 432px */
+		}
+	}
+
+	/* 1440px */
+	@media screen and (width >= 90em) {
+		.main__section--typemaster {
+			max-width: 82em; /* 1312px */
+		}
+
+		.typemaster__image {
+			position: static;
+			width: 100%;
+		}
+
+		.typemaster__picture {
+			position: relative;
+		}
+
+		.typemaster__picture::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: -17.5em; /* 280px */
+			width: 16em; /* 256px */
+			height: 15em; /* 240px */
+			border-radius: 1em; /* 16px */
+			background-color: #e8eff2;
+		}
+	}
+</style>
